@@ -70,7 +70,7 @@ Welcome to your Azure Red Hat OpenShift Workshop! We've prepared a seamless envi
  
 Once you're ready to dive in, your virtual machine and lab guide will be right at your fingertips within your web browser.
 
-  ![](../media/lab-guide-aro.png)
+  ![](../media/new/env.png)
 
 ### Virtual Machine & Lab Guide
  
@@ -80,51 +80,47 @@ Once you're ready to dive in, your virtual machine and lab guide will be right a
  
 To get a better understanding of your lab resources and credentials, navigate to the **Environment** tab.
  
-  ![](../media/env-01.png)
+  ![](../media/new/env2.png)
  
 ## Utilizing the Split Window Feature
  
 For convenience, you can open the lab guide in a separate window by clicking on the **Split Window** button in the top right corner.
  
-  ![](../media/split-01.png)
+  ![](../media/new/split.png)
  
 ## Managing Your Virtual Machine
  
-Feel free to **start, stop, or restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
+Feel free to **Start, Stop, or Restart (2)** your virtual machine as needed from the **Resources (1)** tab. Your experience is in your hands!
 
-  ![](../media/resourses.png)
+  ![](../media/new/ers.png)
 
 ## Lab Guide Zoom In/Zoom Out
  
 To adjust the zoom level for the environment page, click the **A↕ : 100%** icon located next to the timer in the lab environment.
 
-  ![](../media/zoom-feature.png)
+  ![](../media/new/zoom.png)
 
 ## Let's Get Started with the Azure Portal
  
-1. On your virtual machine, click on the **Azure Portal (1)** icon, as shown below.
+1. On your **LabVM**, click on the **Azure Portal** icon, as shown below.
  
-    ![](../media/azure-portal-edge.png)
+    ![](../media/new/azure.png)
 
-1. On the **Sign in to Microsoft Azure** tab, you will see the login screen. In that, enter the following and click on **Next**. 
+1. On the **Sign in to Microsoft Azure** tab, you will see the login screen. In that, enter the following and click on **Next (2)**. 
 
-   * **Email/Username**: <inject key="AzureAdUserEmail"></inject>
+   * **Email/Username**: <inject key="AzureAdUserEmail"></inject> **(1)**
    
-      ![](../media/user-email.png "Enter Email")
+      ![](../media/new/email.png)
      
-1. Next, enter the **password** and click on **Sign in**.
+1. Now enter the following password and click on **Sign in (2)**.
    
-   * **Password**: <inject key="AzureAdUserPassword"></inject>
+   * **Temporary Access Pass:**: <inject key="AzureAdUserPassword"></inject> **(1)**
    
-      ![](../media/user-pass.png "Enter Password")
+      ![](../media/new/pass.png)
 
-1. If you see the pop-up **Action Required**, click on **Ask Later**.
-
-   ![](../media/asklater.png)
-     
 1. Select **No,** if you see the pop-up, **Stay Signed in.**
 
-1. If you see the pop-up, **You have free Azure Advisor recommendations!** Close the window to continue the lab.
+   ![](../media/new/stay.png)
 
 1. If a **Welcome to Microsoft Azure** pop-up window appears, select **Cancel** to skip the tour.
 
@@ -136,8 +132,8 @@ Learner Support Contacts:
 - Email Support: cloudlabs-support@spektrasystems.com
 - Live Chat Support: https://cloudlabs.ai/labs-support
 
-Now, click on **Next** from the lower right corner to move on to the next page.
+Now, click on **Next >>** from the lower right corner to move on to the next page.
 
-![](../media/lab-next.png)
+![](../media/new/next.png)
 
-### Happy Learning!
+## Happy Learning!!
