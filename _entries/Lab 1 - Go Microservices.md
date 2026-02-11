@@ -1,6 +1,6 @@
 # Lab 1 - Go Microservices
 
-### Estimated Duration: 90 minutes
+### Estimated Duration: 90 Minutes
 
 ## Overview
 
@@ -67,7 +67,7 @@ In this task, you will log into the cluster using the `kubeadmin` user.
    }
    ```
 
-   ![](../media/redhatl1.png)
+   ![](../media/new/1.png)
 
 3. **Save** these secrets in a notepad, you are going to use them to connect to the Web Portal.
 
@@ -85,35 +85,35 @@ Each Azure Red Hat OpenShift cluster has a public hostname that hosts the OpenSh
    az aro list -o table
    ```
 
-2. You'll see the cluster web console URL. Open it in a new browser tab, log in with the `kubeadmin` user and the password you retrieved earlier, and click **Log in**.
+2. You'll see the cluster web console **URL**. Open it in a new browser tab, log in with the `kubeadmin` **(1)** user and the **Password (2)** you retrieved earlier, and click **Log in (3)**.
 
-   ![](../media/Redhat-image4.png)
+   ![](../media/new/2.png)
 
-   ![](../media/Redhat-image5.png)
+   ![](../media/new/3.png)
 
-3. After logging in, you should be able to see the Azure Red Hat OpenShift Web Console.
+3. After logging in, you should be able to see the **Azure Red Hat OpenShift Web Console**.
 
-   ![Azure Red Hat OpenShift Web Console](../media/openshift-webconsole.png)
+   ![](../media/new/4.png)
 
 ### Retrieve the login command and token
 
-> **Note** Make sure you complete the [prerequisites](#prereq) to install the OpenShift CLI on the Azure Cloud Shell.
+> **Note** Make sure you complete the [prerequisites](#Prerequisites) to install the OpenShift CLI on the Azure Cloud Shell.
 
-1. Once you're logged into the Web Console, click on the username **kube:admin** **(1)** on the top right, then click **Copy login command (2)**.
+1. Once you're logged into the Web Console, click on the username **kube:admin** **(1)** on the top right corner, then click **Copy login command (2)**.
 
    ![Copy login command](../media/redhatl2.png)
 
-2. On the following page click on **Display Token**.
+2. On the following page, click on **Display Token**.
 
    ![Copy login command](../media/redhatl3.png)
 
-3. Now, copy the ```oc login``` line.
+3. Under **Log in with this token**, copy the ```oc login``` line.
 
    ![Copy login command](../media/redhatl4.png)
 
-4. Open the [Azure Cloud Shell](https://shell.azure.com) and paste the login command. You should be able to connect to the cluster.
+4. Navigate back to **Azure Cloudshell** and paste the login command. You should be able to connect to the cluster.
 
-   ![](../media/Redhat-image7.png)
+   ![](../media/new/5.png)
 
 ### Create a project
 
@@ -125,7 +125,7 @@ A project allows a community of users to organize and manage their content in is
    oc new-project workshop
    ```
 
-   ![Create new project](../media/lab1-task3-1.png)
+   ![Create new project](../media/new/6.png)
 
 > **Resources**
 
