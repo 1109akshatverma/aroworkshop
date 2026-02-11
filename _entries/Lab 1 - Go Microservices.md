@@ -151,17 +151,21 @@ Azure Red Hat OpenShift allows you to deploy a container image from Docker hub e
       -e MONGODB_ROOT_PASSWORD=ratingspassword
     ```
 
-   ![Create new project](../media/redhatl5.png)
+   ![Create new project](../media/new/7.png)
 
-2. Now, go back to the web console and switch to **Developer** mode. Click on the three horizontal lines **(☰) (1)** in the top left corner, then select **Administrator (2)**, and finally, click on **Developer (3)**.
+2. Now, go back to the **RedHat OpenShift** web console tab. From the left pane, expand **Administrator (1)** and click on **Developer (2)** to switch to **Developer** mode.
 
-   ![Developer settings](../media/developer-settings.png)
+   ![Developer settings](../media/new/8.png)
 
    >**Note:** If you see Welcome to the Developer Perspective!. You can choose **Skip tour**.
 
-   ![Developer settings](../media/redhatl6.png)
+   ![Developer settings](../media/new/a1.png)
 
-1. Switch to the **workshop** project, you should see a new deployment for mongoDB.
+1. From the top navigation bar, click on **Project: All Projects (1)** dropdown and select the **workshop (2)** project.
+
+   ![Developer settings](../media/new/a2.png)
+
+1. You should see a new deployment for **mongoDB**.
 
 ### Verify if the mongoDB pod was created successfully
 
@@ -171,7 +175,7 @@ Azure Red Hat OpenShift allows you to deploy a container image from Docker hub e
     oc get all
     ```
 
-   ![oc status](../media/oc-status-mongodb.png)
+   ![oc status](../media/new/a3.png)
 
 ### Retrieve mongoDB service hostname
 
@@ -181,15 +185,13 @@ Azure Red Hat OpenShift allows you to deploy a container image from Docker hub e
     oc get svc mongodb
     ```
 
-   ![oc get svc](../media/oc-get-svc-mongo.png)
+   ![oc get svc](../media/new/a4.png)
 
 1. The service will be accessible at the following DNS name: `mongodb.workshop.svc.cluster.local` which is formed of `[service name].[project name].svc.cluster.local`. This resolves only within the cluster.
 
 1. Copy and paste the **CLUSTER IP** os the mongodb service, you'll need this IP addrress to import the ratings data in the next task to configure the `rating-api`.
 
-1. You can also retrieve this from the web console. 
-
-   ![MongoDB service in the Web Console](../media/mongo-svc-webconsole.png)
+   ![oc get svc](../media/new/a5.png)
 
 ## Task 5: Deploy Ratings API
 
@@ -205,7 +207,20 @@ The `rating-api` is a NodeJS application that connects to mongoDB to retrieve an
 
 1. To be able to setup CI/CD webhooks, you'll need to fork the application into your personal GitHub repository.
 
-<a class="github-button" href="https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-api/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork MicrosoftDocs/mslearn-aks-workshop-ratings-api on GitHub">Fork</a>
+   <a class="github-button" href="https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-api/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork MicrosoftDocs/mslearn-aks-workshop-ratings-api on GitHub">Fork</a>
+
+1. On the GitHub repository, click on **Fork** from the top-right corner.
+
+   ![oc get svc](../media/new/a6.png)
+
+1. On the **Create a new fork** page, click on **Create fork**. 
+
+   ![oc get svc](../media/new/a7.png)
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task and enter you **GitHub Username**. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
 <validation step="a2110909-a71b-4cba-8adb-f1dfd3c6a9a4" />
 
@@ -213,27 +228,53 @@ The `rating-api` is a NodeJS application that connects to mongoDB to retrieve an
 
 > **Note** You're going to be using [source-to-image (S2I)](#source-to-image-s2i) as a build strategy.
 
+> **Note** Replace `<your GitHub username>` with your GitHub Username and then execute the command.
+
 ```sh
 oc new-app https://github.com/<your GitHub username>/mslearn-aks-workshop-ratings-api --strategy=source --name=rating-api
 ```
 
-![Create rating-api using oc cli](../media/oc-newapp-ratingapi.png)
+![Create rating-api using oc cli](../media/new/a8.png)
 
 ### Configure the required environment variables
 
-1. Create the `MONGODB_URI` environment variable. This URI should look like `mongodb://[username]:[password]@[endpoint]:27017/ratingsdb`. You'll need to replace the `[usernaame]` and `[password]` with the ones you used when creating the database. You'll also need to replace the `[endpoint]` with the hostname acquired in the previous step
+1. aa
 
-1. Hit **Save** when done.
+   ![](../media/new/b1.png)
 
-   ![Create a MONGODB_URI environment variable](../media/rating-api-envvars.png)
+1. aa
 
-1. It can also be done with CLI
+   ![](../media/new/b2.png)
 
-    ```
-    oc set env deploy/rating-api MONGODB_URI=mongodb://ratingsuser:ratingspassword@mongodb.workshop.svc.cluster.local:27017/ratingsdb
-    ```
+1. Click on **Environment (1)** tab.
+
+1. Create the `MONGODB_URI` **(2)** environment variable. This URI should look like `mongodb://[username]:[password]@[endpoint]:27017/ratingsdb` **(3)**. You'll need to replace the `[usernaame]` and `[password]` with the ones you used when creating the database. You'll also need to replace the `[endpoint]` with the hostname acquired in the previous step
+
+1. Hit **Save (4)** when done.
+
+   ![Create a MONGODB_URI environment variable](../media/new/b4.png)
+
+1. It can also be done with CLI.
+
+   ```
+   oc set env deploy/rating-api MONGODB_URI=mongodb://ratingsuser:ratingspassword@mongodb.workshop.svc.cluster.local:27017/ratingsdb
+   ```
+
+   ![Create rating-api using oc cli](../media/new/a9.png)
 
 ### Verify that the service is running
+
+1. From the left navigation pane under Developer, click on **Topology (1)** and select the **rating-api (2)** deployment to view its pod and related resources.
+
+   ![](../media/new/b5.png)
+
+1. Under **Resources (1)** tab, click on the pod name **rating-api-xxxxx (2)** to view its details and logs.
+
+   ![](../media/new/b6a.png)
+
+1. Click on the **Logs (1)** tab, you should see a log message confirming the code can **successfully (2)** connected to the mongoDB.
+
+   ![](../media/new/b7.png)
 
 If you navigate to the logs of the `rating-api` deployment, you should see a log message confirming the code can successfully connect to the mongoDB.
 For that, in the deployment's details screen, click on *Pods* tab, then on one of the pods
@@ -249,13 +290,15 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
     cd mslearn-aks-workshop-ratings-api/
     ```
 
+   ![](../media/new/b9.png)
+
 1. Get the pods. You'll specifically use the mongodb pod name to connect to the remote shell on the pod.
 
     ```sh
     oc get pods
     ```
 
-   ![](../media/oc-get-pods.png)
+   ![](../media/new/b8.png)
 
 1. Copy the data folder into the mongoDB pod. Replace the **$MONGODB-POD-NAME** with the actual pod name.
 
@@ -269,7 +312,7 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
     oc rsh $MONGODB-POD-NAME
     ```
 
-   ![](../media/oc-rsh.png)
+   ![](../media/new/b10.png)
 
 1. Run the `mongoimport` command to import the JSON data files into the database. Replace the **$MONGODB-CLUSTER-IP** with the actual mongodb service when you ran the command `oc get svc mongodb` in the previous task and verify that all the documents have been imported successfully.
 
@@ -285,13 +328,15 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
     mongoimport --host $MONGODB-CLUSTER-IP --username ratingsuser --password ratingspassword --db ratingsdb --collection ratings --type json --file /tmp/data/ratings.json --jsonArray
     ```
 
-   ![](../media/import-data.png)
+   ![](../media/new/b11.png)
 
 1. `Exit` the remote shell.
 
     ```sh
     exit
     ```
+
+   ![](../media/new/b12.png)
 
 ### Retrieve `rating-api` service hostname
 
@@ -315,7 +360,7 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
 
 1. You'll get back something similar to the below. Make note the secret key in the red box as you'll need it in a few steps.
 
-   ![Rating API GitHub trigger secret](../media/rating-api-github-secret.png)
+   ![Rating API GitHub trigger secret](../media/new/q1.png)
 
 1. Retrieve the GitHub webhook trigger URL from the build configuration.
 
@@ -325,17 +370,17 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
 
    ![Rating API GitHub trigger url](../media/rating-api-github-webhook-url.png)
 
-1. Replace the `<secret>` placeholder with the secret you retrieved in the previous step to have a URL similar to `https://api.otyvsnz3.eastus.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop/buildconfigs/rating-api/webhooks/SECRETSTRING/github`. You'll use this URL to setup the webhook on your GitHub repository.
+1. Replace the `<secret>` placeholder with the secret you retrieved in **Step 3** to have a URL similar to `https://api.otyvsnz3.eastus.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop/buildconfigs/rating-api/webhooks/SECRETSTRING/github`. You'll use this URL to setup the webhook on your GitHub repository.
 
-1. In your GitHub repository, select **Add Webhook** from **Settings** → **Webhooks**.
+1. Navigate to your **GitHub** repository, from the top menu bar, click on **Settings (1)**, select **Webhooks (2)** from the left pane.
 
-1. Paste the URL output (similar to above) into the Payload URL field.
+1. Paste the **URL (3)** output (similar to above) into the **Payload URL** field.
 
-1. Change the Content Type from GitHub’s default **application/x-www-form-urlencoded** to **application/json**.
+1. Change the Content Type to **application/json (4)**.
 
-1. Click **Add webhook**.
+1. And then click on **Add webhook (5)**.
 
-   ![GitHub add webhook](../media/rating-api-github-addwebhook.png)
+   ![](../media/new/q2.png)
 
 1. You should see a message from GitHub stating that your webhook was successfully configured.
 
