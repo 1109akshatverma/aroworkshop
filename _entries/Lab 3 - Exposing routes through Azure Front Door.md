@@ -61,6 +61,8 @@ export NAMESPACE="microsweeper-ex"
 export APP_SERVICE="microsweeper-appservice" 
 ```
 
+   ![Application diagram](../media/new/f1.png)
+
 ## Task 2: Set Up Azure Front Door
 
 ### Task 2.1: Create an Azure Front Door Profile
@@ -76,6 +78,8 @@ In this task, you will create a Front Door profile to manage your global routing
       --sku Standard_AzureFrontDoor
    ```
 
+   ![Application diagram](../media/new/f2.png)
+
 1. Create the endpoint.
 
    ```
@@ -86,6 +90,8 @@ In this task, you will create a Front Door profile to manage your global routing
       --enabled-state Enabled
    ```
 
+   ![Application diagram](../media/new/f3.png)
+
 1. Get the endpoint hostname.
 
    ```
@@ -95,6 +101,8 @@ In this task, you will create a Front Door profile to manage your global routing
       --resource-group "$AZ_RG" \
       --query hostName -o tsv)
    ```
+
+   ![Application diagram](../media/new/f4.png)
 
 ### Task 2.2: Configure Origin Group and Origin
 
@@ -116,6 +124,8 @@ In this task, you will set up an origin group and define the backend origin that
       --additional-latency-in-milliseconds 50
    ```
 
+   ![Application diagram](../media/new/f5.png)
+
 1. Create the origin.
 
    ```
@@ -133,6 +143,8 @@ In this task, you will set up an origin group and define the backend origin that
       --enabled-state Enabled
    ```
 
+   ![Application diagram](../media/new/f6.png)
+
 1. Display the origin information.
 
    ```
@@ -143,6 +155,8 @@ In this task, you will set up an origin group and define the backend origin that
       --resource-group "$AZ_RG" \
       --output table
    ```
+
+   ![Application diagram](../media/new/f7.png)
 
 ### Task 2.3: Create Default Route
 
@@ -163,6 +177,8 @@ In this task, you will create a default route to link your frontend endpoint wit
       --link-to-default-domain Enabled \
       --patterns "/*"
    ```
+
+   ![Application diagram](../media/new/f8.png)
 
 1. Display the route information.
 
