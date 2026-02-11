@@ -656,4 +656,6 @@ In this lab, you completed the following tasks:
 - Deployed Ratings frontend
 - Created Network Policy for secure communication
 
-### You have successfully completed the lab. Click on **Next>>** to proceed with the next lab.
+### You have successfully completed the lab. Click on **Next >>** to proceed with the next lab.
+
+![](../media/new/next.png)
