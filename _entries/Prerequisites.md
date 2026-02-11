@@ -1,6 +1,6 @@
 # Pre-requisites
 
-### Estimated Duration: 15 minutes
+### Estimated Duration: 15 Minutes
 
 ## Objectives
 
