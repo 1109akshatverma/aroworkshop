@@ -16,33 +16,42 @@ Azure Cloud Shell provides a browser-based command-line environment with pre-ins
 
 You can use the Azure Cloud Shell accessible at <https://shell.azure.com> once you login with an Azure subscription.
 
-Head over to <https://shell.azure.com> and sign in with your Azure Subscription details.
+1. Open a new browser tab and navigate to `https://shell.azure.com`.
+
+1. When the **Welcome to Microsoft Azure prompt** appears, click **Maybe later** to skip the guided tour and continue with the lab.
+
+   ![](../media/cloudshell/p1.png)
 
 1. Select **Bash** as your shell.
 
    ![](../media/cloudshell/select-bash.png)
 
-1. Select **Mount storage account**, your default **Subscription** and click **Apply**.
+1. Select **Mount storage account (1)**, your default **Subscription (2)** and click **Apply (3)**.
 
    ![](../media/Redhat-image1.png)
 
-1. Select **I want to create a storage account** and click **Next**.
+1. Select **I want to create a storage account (1)** and click **Next (2)**.
 
-   ![](../media/cloudshell/select-create-strg.png)
+   ![](../media/cloudshell/p2.png)
 
 1. Specify then following values and click **Create (6)** to create a new storage account.
 
    - Subscription: **Select your default subscription (1)**
-   - Resource group: **openshift (2)**
-   - Region: **<inject key="Region" enableCopy="false"/> (3)**
-   - Storage account name: **strg<inject key="Deployment ID" enableCopy="false"/> (4)**
+   - Resource group: Select **openshift (2)**
+   - Region: Choose **<inject key="Region" enableCopy="false"/> (3)**
+   - Storage account name: Enter **strg<inject key="Deployment ID" enableCopy="false"/> (4)**
    - File share: **none (5)**
 
-   ![](../media/Redhat-image2.png)
+     ![](../media/Redhat-image2.png)
 
-1. You should now have access to the Azure Cloud Shell.
+1. You should now have access to the **Azure Cloud Shell**.
 
-   ![](../media/Redhat-image3.png)
+   ![](../media/cloudshell/p3.png)
+
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
 <validation step="e4da372d-001a-4680-ba58-23f917916623" />
 
@@ -52,21 +61,23 @@ The OpenShift CLI (oc) must be installed in the Azure Cloud Shell environment to
 
 You'll need to download the **latest OpenShift CLI (oc)** client tools for OpenShift 4. You can follow the steps below on the Azure Cloud Shell.
 
-Please run following commands on Azure Cloud Shell to download and setup the OpenShift client.
+1. Please run following commands on **Azure Cloud Shell** to download and setup the OpenShift client.
 
-```sh
-cd ~
-curl https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz > openshift-client-linux.tar.gz
+   ```sh
+   cd ~
+   curl https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux.tar.gz > openshift-client-linux.tar.gz
 
-mkdir openshift
+   mkdir openshift
 
-tar -zxvf openshift-client-linux.tar.gz -C openshift
+   tar -zxvf openshift-client-linux.tar.gz -C openshift
 
-echo 'export PATH=$PATH:~/openshift' >> ~/.bashrc && source ~/.bashrc
+   echo 'export PATH=$PATH:~/openshift' >> ~/.bashrc && source ~/.bashrc
 
-```
+   ```
 
-The OpenShift CLI (oc) is now installed.
+1. The OpenShift CLI (oc) is now installed.
+
+   ![](../media/cloudshell/p4.png)
 
 In case you want to work from your own operating system, here are the links to the different versions of CLI:
 
@@ -189,4 +200,6 @@ In this prerequisites section, you completed the following tasks:
 - Installed OpenShift CLI (oc)
 - Setup your personal GitHub Account
 
-### You have successfully completed setting up the prerequisites. Click on **Next>>** to proceed with the next lab.
+### You have successfully completed setting up the prerequisites. Click on **Next >>** to proceed with the next lab.
+
+![](../media/new/next.png)
