@@ -1,8 +1,8 @@
-# Prerequisites
+# Pre-requisites
 
 ### Estimated Duration: 15 minutes
 
-## Prerequisites Objectives
+## Objectives
 
 You will be able to complete the following tasks:
 
