@@ -372,15 +372,17 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
 
 1. Replace the `<secret>` placeholder with the secret you retrieved in **Step 3** to have a URL similar to `https://api.otyvsnz3.eastus.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop/buildconfigs/rating-api/webhooks/SECRETSTRING/github`. You'll use this URL to setup the webhook on your GitHub repository.
 
-1. Navigate to your **GitHub** repository, from the top menu bar, click on **Settings (1)**, select **Webhooks (2)** from the left pane.
+1. Navigate to your **GitHub** repository, from the top menu bar, click on **Settings (1)**, select **Webhooks (2)** from the left pane, and then click on **Add webhook (3)**.
 
-1. Paste the **URL (3)** output (similar to above) into the **Payload URL** field.
+1. Paste the **URL (4)** output (similar to above) into the **Payload URL** field.
 
-1. Change the Content Type to **application/json (4)**.
+1. Change the Content Type to **application/json (5)**.
 
-1. And then click on **Add webhook (5)**.
+1. And then click on **Add webhook (6)**.
 
-   ![](../media/new/q2.png)
+   ![](../media/new/q11.png)
+
+   ![](../media/new/q12.png)
 
 1. You should see a message from GitHub stating that your webhook was successfully configured.
 
@@ -405,7 +407,7 @@ For that, in the deployment's details screen, click on *Pods* tab, then on one o
 
    ![](../media/port-3000.png)
 
-1. You should be able to see that the `rating-api` service is now edited.
+1. You should be able to see  `service/rating-api edited`.
 
    ![](../media/rating-api-edited.png)
 
@@ -426,6 +428,11 @@ To be able to setup CI/CD webhooks, you'll need to fork the application into you
 
 <a class="github-button" href="https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-web/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork MicrosoftDocs/mslearn-aks-workshop-ratings-web on GitHub">Fork</a>
 
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task and enter you **GitHub Username**. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+
 <validation step="9e829e84-c475-424f-9cde-e5e8cd9a873e" />
 
 ### Modify Dockerfile in your repository
@@ -434,14 +441,14 @@ To be able to setup CI/CD webhooks, you'll need to fork the application into you
 
 > **Note** The `git` commands shown below have been run in a local shell pre-authenticated against the GitHub repository
 
-1. Clone the Git repository locally and change to repo directory
+1. Clone the Git repository locally and change to repo directory.
 
     ```sh
     git clone https://github.com/<your GitHub username>/mslearn-aks-workshop-ratings-web.git
     cd mslearn-aks-workshop-ratings-web
     ```
 
-2. Download updated Dockerfile and Footer.vue files
+2. Download updated Dockerfile and Footer.vue files.
 
     ```sh
     wget https://raw.githubusercontent.com/sajitsasi/rating-web/master/Dockerfile -O ./Dockerfile
@@ -452,23 +459,29 @@ To be able to setup CI/CD webhooks, you'll need to fork the application into you
 
 3. Generate a Personal Access Token (Classic)
 
-   * In the upper-right corner of your GitHub page, click your profile photo, then click on **Settings**.
+   * In the upper-right corner of your GitHub page, click your **Profile (1)**, then click on **Settings (2)**.
 
-     ![GitHub Settings](../media/git-settings.png)
+     ![GitHub Settings](../media/new/q13.png)
 
-   * In the left sidebar, click on **Developer settings**.
+   * In the left sidebar, scroll to the bottom and click on **Developer settings**.
 
-   * In Developer Settings, under Personal access tokens, select **Tokens (classic)**(1), click on **Generate new token**(2) and then select **Generate new token (classic)**(3).
+     ![GitHub Settings](../media/new/q14.png)
 
-     ![GitHub PAT (Classic)](../media/git-pat-classic.png)
+   * In Developer Settings, expand **Personal access tokens (1)**, select **Tokens (classic) (2)**, click on **Generate new token (3)** and then select **Generate new token (classic) (4)**.
 
-   * In the **Note**(1) field, give your token a descriptive name, leave the default settings for **Expiration**(2) and under **Select scopes** select **repo**(3).
+     ![GitHub PAT (Classic)](../media/new/q15.png)
 
-     ![GitHub PAT Generate](../media/git-pat-generate.png)
+   * In the **Note** field, give your token a **descriptive name (1)**, leave the default settings for **Expiration (2)** and under **Select scopes**, select **repo (3)**.
 
-   * Click on **Generate token**.
+     ![GitHub PAT Generate](../media/new/q16.png)
 
-   * Once the token is generated, make sure you copy the token in a Notepad. You will use this token for the authentication process in the next step while running the **git push** command.
+   * Scroll down to the bottom of the page and click on **Generate token**.
+
+     ![GitHub PAT Generate](../media/new/w11.png)
+
+   * Once the token is generated, make sure you **copy** the token in a Notepad. You will use this token for the authentication process in the next step while running the **git push** command.
+
+     ![GitHub PAT Generate](../media/new/w12.png)
 
 4. Verify, stage, commit and push changes to your local repository
 
@@ -488,13 +501,15 @@ To be able to setup CI/CD webhooks, you'll need to fork the application into you
 
 > **Note** You're going to be using [source-to-image (S2I)](#source-to-image-s2i) as a build strategy.
 
-```sh
-oc new-app https://github.com/<your GitHub username>/mslearn-aks-workshop-ratings-web --strategy=docker --name=rating-web
-```
+1. Execute the following command in Cloudshell and replace `<your GitHub username>` with your **GitHub Username**.
 
-The build will take between 5-10 minutes
+   ```sh
+   oc new-app https://github.com/<your GitHub username>/mslearn-aks-workshop-ratings-web --strategy=docker --name=rating-web
+   ```
 
-![Create rating-web using oc cli](../media/oc-newapp-ratingweb.png)
+   > **Note:** The build will take between **5-10 minutes**.
+
+   ![Create rating-web using oc cli](../media/oc-newapp-ratingweb.png)
 
 ### Configure the required environment variables
 
@@ -515,7 +530,7 @@ oc set env deploy rating-web API=http://rating-api:8080
    oc expose svc/rating-web
    ```
 
-1. Find out the created route hostname
+1. Find out the created route hostname.
 
    ```sh
    oc get route rating-web
@@ -557,15 +572,17 @@ Open the hostname in your browser, you should see the rating app page. Use **htt
 
 1. Replace the `<secret>` placeholder with the secret you retrieved in the previous step to have a URL similar to `https://api.otyvsnz3.eastus.aroapp.io:6443/apis/build.openshift.io/v1/namespaces/workshop/buildconfigs/rating-web/webhooks/SECRETSTRING/github`. You'll use this URL to setup the webhook on your GitHub repository.
 
-1. In your GitHub repository, select **Add Webhook** from **Settings** → **Webhooks**.
+1. Navigate to your **GitHub** repository, from the top menu bar, click on **Settings (1)**, select **Webhooks (2)** from the left pane, and then click on **Add webhook (3)**.
 
-1. Paste the URL output (similar to above) into the Payload URL field.
+1. Paste the **URL (4)** output (similar to above) into the **Payload URL** field.
 
-1. Change the Content Type from GitHub’s default **application/x-www-form-urlencoded** to **application/json**.
+1. Change the Content Type to **application/json (5)**.
 
-1. Click **Add webhook**.
+1. And then click on **Add webhook (6)**.
 
-   ![GitHub add webhook](../media/rating-web-github-addwebhook.png)
+   ![](../media/new/q11a.png)
+
+   ![](../media/new/q12.png)
 
 1. You should see a message from GitHub stating that your webhook was successfully configured.
 
@@ -579,7 +596,7 @@ Now, whenever you push a change to your GitHub repository, a new build will auto
 
 1. Commit the changes to the file into the `master` branch.
 
-   ![GitHub edit app](../media/rating-web-editcolor.png)
+   ![GitHub edit app](../media/new/q17a.png)
 
 1. Immediately, go to the **Builds** tab in the OpenShift Web Console. You'll see a new build queued up which was triggered by the push. Once this is done, it will trigger a new deployment and you should see the new website color updated.
 
@@ -598,19 +615,21 @@ Now that you have the application working, it is time to apply some security har
 
 ### Switch to the Cluster Console
 
-1. Switch to the Administrator console.
+1. Select the **Developer (1)** dropdown, switch to the **Administrator (2)** console.
 
-   ![Switch to the Administrator console](../media/switch-to-admin-console.png)
+   ![GitHub edit app](../media/new/w13.png)
 
-1. Make sure you're in the **workshop** project, expand **Networking**, select **NetwokPolicies** and click **Create Network Policy**.
+1. Make sure you're in the **workshop (1)** project, expand **Networking (2)**, select **NetwokPolicies (3)** and click **Create Network Policy (4)**.
 
-   ![Cluster console page](../media/cluster-console.png)
+   ![GitHub edit app](../media/new/s11.png)
 
 ### Create network policy
 
 1. You will create a policy that applies to any pod matching the `app=rating-api` label. The policy will allow ingress only from pods matching the `app=rating-web` label.
 
-1. Use the YAML below in the editor, and make sure you're targeting the **workshop** project.
+1. Click on the **YAML view (1)**.
+
+1. Use the **YAML (2)** below in the editor, and make sure you're targeting the **workshop** project.
 
    ```yaml
    apiVersion: networking.k8s.io/v1
@@ -631,7 +650,9 @@ Now that you have the application working, it is time to apply some security har
 
    ![Create network policy](../media/create-networkpolicy.png)
 
-1. Click **Create**.
+1. Then click on **Create (3)**.
+
+   ![Create network policy](../media/new/q18.png)
 
 ## Reference Links
 
