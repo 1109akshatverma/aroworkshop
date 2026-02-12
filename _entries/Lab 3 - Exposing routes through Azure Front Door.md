@@ -1,6 +1,6 @@
 # Lab 3 - Azure Front Door Integration with Azure Red Hat OpenShift (ARO)
 
-### Estimated Duration: 30 minutes
+### Estimated Duration: 30 Minutes
 
 In this lab, you'll learn how to expose applications running on an Azure Red Hat OpenShift (ARO) cluster using Azure Front Door.
 
@@ -12,7 +12,7 @@ Azure Front Door is a global, scalable entry-point that uses the Microsoft globa
 * **Global Edge Access**: Traffic is controlled at Microsoft's edge before entering your Azure environment
 * **Private Infrastructure**: Your ARO cluster and Azure resources can remain private even when services are publicly accessible
 
-## Prerequisites
+## Pre-requisites
 
 - An Azure Red Hat OpenShift (ARO) cluster (public or private)
 - Access to Azure CLI and OpenShift CLI (oc)
