@@ -191,6 +191,8 @@ In this task, you will create a default route to link your frontend endpoint wit
       --output table
    ```
 
+   ![Application diagram](../media/new/s12.png)
+
 ## Task 3: Test the Configuration
 
 In this task, you will verify the Azure Front Door setup by accessing the application through its frontend URL.
@@ -201,11 +203,15 @@ In this task, you will verify the Azure Front Door setup by accessing the applic
    echo $DEFAULT_ENDPOINT_HOST
    ```
 
+   ![Application diagram](../media/new/s10.png)
+
 1. When visiting your custom domain in a browser, you should see:
 
    - A HTTP connection
    - Your application loading successfully
    - Traffic routed through Azure Front Door
+
+   >**NOTE:** The webpage may take a few moments to load. If it doesn’t appear, refresh the page or try accessing it in a private/incognito window.
 
 ## Benefits of This Approach
 
