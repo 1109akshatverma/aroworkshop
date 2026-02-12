@@ -36,10 +36,10 @@ Before starting with Azure Front Door deployment, we need to set up the necessar
 
 **IMPORTANT NOTE:** First, copy and paste the environment variables into a Notepad. Then, define the values before exporting them in Cloud Shell.
 
-- **AZ_USER** - Define your user ID
-- **AZ_RG** - Resource group name where the ARO Cluster is deployed
-- **AZ_ARO** - Your ARO Cluster's unique name. Replace the CLUSTER_NAME with your actual ARO cluster name
-- **AZ_LOCATION** - Resource group region of your ARO cluster
+- **AZ_USER** - Replace with your user Deployment ID. 
+- **AZ_RG** - Replace with **Resource group** name where the **ARO Cluster** is deployed.
+- **AZ_ARO** - Your ARO Cluster's unique name. Replace the <CLUSTER_NAME> with your actual **ARO cluster** name.
+- **AZ_LOCATION** - Replace with your resource group **Region** of your ARO cluster.
 
 ### Core Environment Variables
 
