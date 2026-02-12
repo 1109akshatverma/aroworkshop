@@ -1,12 +1,12 @@
 # Azure Red Hat OpenShift Workshop
 
-### Overall Estimated Duration: 4 hours
+### Overall Estimated Duration: 4 Hours
 
 ## Overview
 
 Azure Red Hat OpenShift is a fully managed Red Hat OpenShift service in Azure that is jointly engineered and supported by Microsoft and Red Hat. In this lab, you'll go through a set of tasks that will help you understand some of the concepts of deploying and securing container based applications on top of Azure Red Hat OpenShift.
 
-## Objective
+## Objectives
 
 This lab is designed to equip participants with hands-on experience in insights on Azure Red Hat OpenShift Cluster. By completing this lab, participants will learn to:
 
@@ -16,7 +16,7 @@ This lab is designed to equip participants with hands-on experience in insights 
 
 You'll be doing the majority of the labs using the OpenShift CLI, but you can also accomplish them using the Azure Red Hat OpenShift web console.
 
-## Prerequisites
+## Pre-requisites
 
 Participants should have:
 
