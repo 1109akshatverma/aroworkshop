@@ -189,7 +189,7 @@ Azure Red Hat OpenShift allows you to deploy a container image from Docker hub e
 
 1. The service will be accessible at the following DNS name: `mongodb.workshop.svc.cluster.local` which is formed of `[service name].[project name].svc.cluster.local`. This resolves only within the cluster.
 
-1. Copy and paste the **CLUSTER IP** os the mongodb service, you'll need this IP addrress to import the ratings data in the next task to configure the `rating-api`.
+1. Copy and paste the **CLUSTER IP** of the mongodb service, you'll need this IP address to import the ratings data in the next task to configure the `rating-api`.
 
    ![oc get svc](../media/new/a5.png)
 
