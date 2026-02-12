@@ -34,7 +34,7 @@ You will be able to complete the following tasks:
 
 Before starting with Azure Front Door deployment, we need to set up the necessary environment variables. These variables will be used throughout the implementation process.
 
-**IMPORTANT NOTE:** First, copy and paste the environment variables into a Notepad. Then, define the values before exporting them in Cloud Shell.
+**IMPORTANT NOTE:** First, copy and paste the environment variable values from the **Environment** page of the Lab Guide and paste them into Notepad. Then, define the values before exporting them in Cloud Shell.
 
 - **AZ_USER** - Replace with your user Deployment ID. 
 - **AZ_RG** - Replace with **Resource group** name where the **ARO Cluster** is deployed.
