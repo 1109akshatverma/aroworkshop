@@ -230,4 +230,6 @@ In this lab, you completed the following tasks:
 - Set Up Azure Front Door
 - Tested the Azure Front Door configuration
 
-### You have successfully completed the lab.
+### You have successfully completed the Hands-on lab.
+
+By completing this lab, you gained hands-on experience with **Azure Red Hat OpenShift** by connecting to an OpenShift cluster, creating projects, and deploying applications such as MongoDB, Ratings API, and a frontend service with network policies. You also built and deployed a cloud-based application using Azure Database for PostgreSQL, configured environment variables, and set up Azure Front Door for traffic routing and application access. This exercise demonstrated how to deploy, secure, and manage containerized applications and cloud services in an end-to-end Kubernetes-based environment.
