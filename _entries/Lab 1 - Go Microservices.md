@@ -153,9 +153,9 @@ Azure Red Hat OpenShift allows you to deploy a container image from Docker hub e
 
    ![Create new project](../media/new/7.png)
 
-2. Now, go back to the **RedHat OpenShift** web console tab. From the left pane, expand **Administrator (1)** and click on **Developer (2)** to switch to **Developer** mode.
+2. Now, go back to the **RedHat OpenShift** web console tab. Click on the three horizontal lines **(☰) (1)** in the top left corner, expand **Administrator (2)** and click on **Developer (3)** to switch to **Developer** mode.
 
-   ![Developer settings](../media/new/8.png)
+   ![Developer settings](../media/new/t11.png)
 
    >**Note:** If you see Welcome to the Developer Perspective!. You can choose **Skip tour**.
 
@@ -207,7 +207,11 @@ The `rating-api` is a NodeJS application that connects to mongoDB to retrieve an
 
 1. To be able to setup CI/CD webhooks, you'll need to fork the application into your personal GitHub repository.
 
-   <a class="github-button" href="https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-api/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork MicrosoftDocs/mslearn-aks-workshop-ratings-api on GitHub">Fork</a>
+1. Navigate to the following GitHub Repository.
+
+   ```
+   https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-api
+   ```
 
 1. On the GitHub repository, click on **Fork** from the top-right corner.
 
@@ -238,13 +242,9 @@ oc new-app https://github.com/<your GitHub username>/mslearn-aks-workshop-rating
 
 ### Configure the required environment variables
 
-1. aa
+1. From the left pane, click on **Builds (1)** and select the **rating-api (2)**.
 
-   ![](../media/new/b1.png)
-
-1. aa
-
-   ![](../media/new/b2.png)
+   ![](../media/new/t12.png)
 
 1. Click on **Environment (1)** tab.
 
@@ -252,7 +252,7 @@ oc new-app https://github.com/<your GitHub username>/mslearn-aks-workshop-rating
 
 1. Hit **Save (4)** when done.
 
-   ![Create a MONGODB_URI environment variable](../media/new/b4.png)
+   ![Create a MONGODB_URI environment variable](../media/new/t13.png)
 
 1. It can also be done with CLI.
 
