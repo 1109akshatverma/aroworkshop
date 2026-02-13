@@ -79,6 +79,18 @@ In this task, you will create a managed PostgreSQL database instance in Azure to
    --public 0.0.0.0
    ```
 
+   > **NOTE:** If the command fails due to a region-related issue, update the **AZ_LOCATION** variable to an alternate supported region and then re-run Step 8. For example:
+
+   ```
+   export AZ_LOCATION="westus"
+   ```
+
+   > **OR**
+
+   ```
+   export AZ_LOCATION="centralus"
+   ```
+
    * **Command Parameters**
 
    | Parameter | Description |
