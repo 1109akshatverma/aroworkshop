@@ -426,9 +426,14 @@ The `rating-web` is a NodeJS application that connects to the `rating-api`. Belo
 
 To be able to setup CI/CD webhooks, you'll need to fork the application into your personal GitHub repository.
 
-<a class="github-button" href="https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-web/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork MicrosoftDocs/mslearn-aks-workshop-ratings-web on GitHub">Fork</a>
+1. Navigate to the following GitHub Repository.
 
-   ![](../media/new/d11.png)
+   ```
+   https://github.com/MicrosoftDocs/mslearn-aks-workshop-ratings-web/fork
+   ```
+1. On the **Create a new fork** page, click on **Create fork**. 
+
+   ![oc get svc](../media/new/d11.png)
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task and enter you **GitHub Username**. If you receive a success message, you have successfully validated the lab. 
